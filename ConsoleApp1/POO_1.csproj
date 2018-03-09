@@ -43,13 +43,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
+    <Compile Include="Avion.cs" />
     <Compile Include="Chat.cs" />
     <Compile Include="Chien.cs" />
     <Compile Include="ChienMuet.cs" />
+    <Compile Include="Femme.cs" />
+    <Compile Include="Heure.cs" />
+    <Compile Include="IVolant.cs" />
     <Compile Include="Maths.cs" />
     <Compile Include="ObjetVide.cs" />
+    <Compile Include="Oiseau.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stadium.cs" />
     <Compile Include="Voiture.cs" />
   </ItemGroup>
   <ItemGroup>

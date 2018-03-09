@@ -11,7 +11,10 @@ namespace POO_1
         public int NombrePattes { get; set; }
         protected bool estVivant { get; set; }
         public int age { get; set; }
-        protected string prenom { get; set; }
+       // protected string prenom { get; set; }
+
+            //a effacer
+        public string prenom { get; set; }
 
         public Animal()
         {

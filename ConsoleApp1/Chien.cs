@@ -8,6 +8,15 @@ namespace POO_1
 {
     class Chien:Animal
     {
+        //a effacer chien connecté 
+        public static Chien ConnectChien { get; set; }
+        //a affacer
+        public string addChien()
+        {
+            string chainedeconnexion = Maths.connectionString;
+            //faire les operations ici
+            return chainedeconnexion;
+        }
         public string color { get; set; }
         public Chien(string prenomChien):base(prenomChien)
         {
@@ -39,6 +48,25 @@ namespace POO_1
             Console.WriteLine("Reclamer le repas a son maitre");
             base.Manger();
             Console.WriteLine("...");
+        }
+
+        public override bool Equals(object obj)
+        {
+            Chien ch = obj as Chien;
+            if (ch == null)
+            {
+                return false;
+            }else
+
+            {
+                return ch.NombrePattes == NombrePattes && ch.prenom == prenom && ch.age == age; 
+            }
+            
+        }
+
+        public override int GetHashCode()
+        {
+            return prenom.GetHashCode() * age.GetHashCode() * NombrePattes.GetHashCode();
         }
 
     }
