@@ -19,6 +19,12 @@ namespace POO_1
             Console.WriteLine("Je ne peux aboyer car je suis muet.");
         }
 
+        public override void SeDeplacer()
+        {
+            base.SeDeplacer();
+        }
+        
+
 
     }
 }

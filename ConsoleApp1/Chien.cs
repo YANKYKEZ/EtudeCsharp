@@ -36,7 +36,7 @@ namespace POO_1
         {
             age = 0;
             estVivant = true;
-        }
+        } 
 
 //Redefinition de la methode Manger en y apportant des modification : SUBSTITUTION... Pour le faire, il faut que la classe
 // mere utilise le mot clé VIRTUAL(public virtual void Manger()) pour annoncer que cette methode pourra etre redefinit dans  une des classe fille. 
@@ -67,6 +67,14 @@ namespace POO_1
         public override int GetHashCode()
         {
             return prenom.GetHashCode() * age.GetHashCode() * NombrePattes.GetHashCode();
+        }
+
+
+        //la redefinition de cette methode est obligatoire car la methode est abstract et la classe chien herite de 
+        // animale qui elle mme est abstract. d'ou l'obligation de redefinition.
+        public override void SeDeplacer()
+        {
+            Console.WriteLine("je me deplace");
         }
 
     }

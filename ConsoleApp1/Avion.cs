@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace POO_1
 {
-    class Avion : IVolant
+    class Avion : IVolantMoteur
     {
         public int NombrePropulseures { get; set; }
+
+        public void DemarerMoteur()
+        {
+            Console.WriteLine("Je demarre le moteur");
+        }
+
         public void Voler()
         {
             Console.WriteLine("Je vole grace à " +NombrePropulseures+ " moteur qui me propulse");
         }
+        
     }
 }

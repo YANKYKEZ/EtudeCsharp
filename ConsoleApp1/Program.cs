@@ -22,13 +22,14 @@ namespace POO_1
             Console.WriteLine(chaineMaj);
             
 
-            Animal animal1 = new Animal("MonAnimalPrincipale");
+            //Animal animal1 = new Animal("MonAnimalPrincipale");
 
-            animal1.NombrePattes = 4;
-            Console.WriteLine(animal1.NombrePattes);
-            Chien chien1 = new Chien("labral");
-            chien1.Aboyer();
-            chien1.Respirer();
+            //-------mise en commentaire car l'objet Animal ne peux plus etre instanceié a cause de son statut devenu abstract.
+            //animal1.NombrePattes = 4;
+            //Console.WriteLine(animal1.NombrePattes);
+            //Chien chien1 = new Chien("labral");
+            //chien1.Aboyer();
+            //chien1.Respirer();
 
             List<Animal> maListeAnimaux = new List<Animal>();
             Chien chien2 = new Chien("Monchien2");
@@ -275,7 +276,35 @@ namespace POO_1
                 //Console.WriteLine(ivol.NombrePropulseures);
                 ivol.Voler();
             }
-           
+
+            Moto moto1 = new Moto { NombreMoteur = 1,couleurMoto="Noire",marque="bmw" };
+            Tram tram1 = new Tram { NombreMoteur = 6, NomPilote="Arno" };
+            List<IRouler> EngentRoulant = new List<IRouler> { moto1, tram1 };
+
+            foreach( IRouler roul in EngentRoulant)
+            {
+                roul.Rouler();
+                Tram tr = roul as Tram;
+                if (tr != null)
+                    Console.WriteLine(tr.NomPilote);
+
+                Moto mot = roul as Moto;
+                if (mot != null)
+                    Console.WriteLine(mot.marque + " "+mot.couleurMoto);
+                //Console.WriteLine(roul.NombreMoteur);
+            }
+
+            // Types anonymes.
+            var MaPersonne = new { age = 95, nom = "Arno", profession = "Informaticien" };
+            Console.WriteLine(MaPersonne.GetType());
+            Console.WriteLine(MaPersonne.age);
+             int ProlongeAge()
+            {
+                
+                return  MaPersonne.age + 3;
+            }
+            Console.WriteLine("jai " + ProlongeAge());
+
             //Console.ReadLine();
         }
     }

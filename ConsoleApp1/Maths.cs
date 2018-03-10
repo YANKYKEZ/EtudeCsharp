@@ -37,12 +37,11 @@ namespace POO_1
             Console.WriteLine("t2 :" + t2);
         }
 
-        public int Addition(int a, int b)
+        public static int Addition(int a, int b)
         {
             int resul = a + b;
             Console.WriteLine("le resultat est: " + resul);
             return resul;
-            
         }
 
         public double Addition(double a=6, double b=2)

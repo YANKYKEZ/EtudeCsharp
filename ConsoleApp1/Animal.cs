@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace POO_1
 {
-    class Animal
+    public abstract class Animal
     {
         public int NombrePattes { get; set; }
         protected bool estVivant { get; set; }
         public int age { get; set; }
-       // protected string prenom { get; set; }
+        // protected string prenom { get; set; }
 
-            //a effacer
+        //a effacer
         public string prenom { get; set; }
 
         public Animal()
@@ -22,9 +22,10 @@ namespace POO_1
             estVivant = true;
             age = 1;
             prenom = "ChienParDefaut";
+             coeur = new Coeur();
         }
 
-        public Animal ( string prenomAnimal)
+        public Animal(string prenomAnimal)
         {
             prenom = prenomAnimal;
 
@@ -33,7 +34,7 @@ namespace POO_1
 
         public virtual void Respirer()
         {
-            Console.WriteLine("Je m'apelle "+ prenom +" Je sais respire");
+            Console.WriteLine("Je m'apelle " + prenom + " Je sais respire");
         }
 
 
@@ -44,5 +45,16 @@ namespace POO_1
             Console.WriteLine("Macher la nourriture");
             Console.WriteLine("Avaler");
         }
+
+        // Methode Abstraite
+        public abstract void SeDeplacer();
+        private Coeur coeur;
+
+        public void Mourrir()
+        {
+            coeur.stoppeBattre();
+        }
+      
+        
     }
 }

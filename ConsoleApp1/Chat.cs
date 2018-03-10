@@ -35,5 +35,11 @@ namespace POO_1
         {
             throw new NotImplementedException();
         }
+
+        public override void SeDeplacer()
+        {
+            throw new NotImplementedException();
+        }
+        
     }
 }
